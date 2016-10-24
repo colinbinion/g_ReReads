@@ -5,7 +5,7 @@ var databaseConnection = require("../database_connection");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   databaseConnection("book").select().then(function(book){
-    res.send(book);
+    res.render("list_book", {book: book});
   });
 });
 
