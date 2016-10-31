@@ -11,7 +11,12 @@ module.exports = {
       user: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD
     }
-  }
+
+    production: {
+      client: 'postgresql',
+      connection: process.env.DATABASE_URL + '?ssl=true'
+    }
+  };
 
   // staging: {
   //   client: 'postgresql',
